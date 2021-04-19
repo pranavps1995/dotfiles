@@ -92,3 +92,13 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+" gutentags
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['.git']
+
+let g:gutentags_ctags_extra_args = [
+      \ '--c++-kinds=+p',
+      \ '--fields=+aiS',
+      \ '--extra=+q',
+      \ ]
