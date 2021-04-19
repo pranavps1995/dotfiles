@@ -11,6 +11,9 @@
 " `vim -u foo`).
 set nocompatible
 
+" remap the leader
+let mapleader = "\<Space>"
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -102,3 +105,10 @@ let g:gutentags_ctags_extra_args = [
       \ '--fields=+aiS',
       \ '--extra=+q',
       \ ]
+
+" ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <Leader>a :Ack<Space>
+nnoremap <leader>f :CtrlPTag<cr>
