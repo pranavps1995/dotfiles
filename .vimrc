@@ -93,6 +93,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+nnoremap <leader>f :CtrlPTag<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -111,4 +113,11 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>a :Ack<Space>
-nnoremap <leader>f :CtrlPTag<cr>
+
+" folding
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "close folds with foldlevel higher than this
+set foldminlines=4      "minimum lines needed to close the fold
+
